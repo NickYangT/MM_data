@@ -1,8 +1,12 @@
-# -*- coding:gb2312 -*- 
+# -*- coding:utf-8 -*-
 _author_ = 'sky'
-import re
-code ='sh002601'
-code_header = re.split('\d{6}', code)[0]
-print code_header
-code_num = re.split('[sz]|[sh]', code)[2]
-print code_num
+
+import MySQLdb
+from MysqlAgent import MysqlAgent
+from GetData import GetData
+from DealWithData import WriteDataToMysql
+
+
+w_instance = WriteDataToMysql('sz000656').write_data_to_sql()
+
+
